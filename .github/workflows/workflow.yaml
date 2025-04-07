@@ -1,0 +1,39 @@
+name: Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    name: Build
+    runs-on:
+      [ubuntu-latest]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.x
+    - name: Restore Workloads
+      run: dotnet workload restore
+    - name: Build
+      run: dotnet build
+
+  unit-test:
+    name: Unit Tests
+    runs-on:
+      [ubuntu-latest]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.x
+    - name: Restore Workloads
+      run: dotnet workload restore
+    - name: Run Unit Tests
+      run: dotnet test ./UnitTests/UnitTests.csproj

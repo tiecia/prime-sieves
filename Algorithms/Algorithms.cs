@@ -14,7 +14,7 @@ public class Algorithms
   /// </summary>
   /// <param name="n">The upper limit (exclusive) up to which to generate prime numbers.</param>
   /// <returns>An IEnumerable of prime numbers up to the specified limit.</returns>
-  public static IEnumerable<int> SieveOfEratosthenes(long n)
+  public static IEnumerable<int> SieveOfEratosthenes(int n)
   {
     if (n <= 0)
     {
@@ -53,7 +53,7 @@ public class Algorithms
   /// </summary>
   /// <param name="n">The upper limit (inclusive) up to which to generate prime numbers.</param>
   /// <returns>An IEnumerable of prime numbers up to the specified limit.</returns>
-  public static IEnumerable<int> SieveOfAtkin(long n)
+  public static IEnumerable<int> SieveOfAtkin(int n)
   {
     if (n < 2)
     {

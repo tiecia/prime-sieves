@@ -1,0 +1,5 @@
+Package: sieve
+Version: 0.1
+Maintainer: tiec
+Architecture: all
+Description: Performance of two prime sieves

@@ -8,6 +8,7 @@
   packages = [ 
     pkgs.bashInteractive
     pkgs.dotnetCorePackages.sdk_9_0
+    pkgs.dpkg
   ];
 
   env.DOTNET_ROOT = pkgs.dotnetCorePackages.sdk_9_0;
