@@ -21,7 +21,7 @@ jobs:
     - name: Restore Workloads
       run: dotnet workload restore
     - name: Build
-      run: dotnet build
+      run: make build
 
   unit-test:
     name: Unit Tests
@@ -36,4 +36,34 @@ jobs:
     - name: Restore Workloads
       run: dotnet workload restore
     - name: Run Unit Tests
-      run: dotnet test ./UnitTests/UnitTests.csproj
+      run: make test
+
+  build-deb:
+    name: Build Debian
+    runs-on:
+      [ubuntu-latest]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.x
+    - name: Restore Workloads
+      run: dotnet workload restore
+    - name: Run Unit Tests
+      run: make build-deb
+
+  lint-deb:
+    name: Lint Debian
+    runs-on:
+      [ubuntu-latest]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.x
+    - name: Restore Workloads
+      run: dotnet workload restore
+    - name: Run Unit Tests
+      run: make lint-deb
