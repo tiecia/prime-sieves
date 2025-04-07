@@ -52,6 +52,11 @@ jobs:
       run: dotnet workload restore
     - name: Run Unit Tests
       run: make build-deb
+    - name: Upload deb artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: deb-file
+        path: ./*.deb
 
   lint-deb:
     name: Lint Debian
