@@ -10,6 +10,8 @@
     pkgs.dotnetCorePackages.sdk_9_0
   ];
 
+  env.DOTNET_ROOT = pkgs.dotnetCorePackages.sdk_9_0;
+
   # https://devenv.sh/languages/
   # languages.rust.enable = true;
 
