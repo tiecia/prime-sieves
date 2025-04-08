@@ -1,10 +1,13 @@
 build:
 	dotnet build
 
+publish:
+	dotnet publish
+
 test:
 	dotnet test ./UnitTests/UnitTests.csproj
 
-build-deb:
+build-deb: publish
 	echo "Building deb package from $(PWD)"
 	./build-deb.sh
 
