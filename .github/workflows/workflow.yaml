@@ -36,7 +36,7 @@ jobs:
     - name: Restore Workloads
       run: dotnet workload restore
     - name: Lint
-      run: dotnet format
+      run: dotnet format --verify-no-changes
 
   unit-test:
     name: Unit Tests
