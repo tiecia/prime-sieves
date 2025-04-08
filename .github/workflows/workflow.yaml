@@ -23,6 +23,21 @@ jobs:
     - name: Build
       run: make build
 
+  lint:
+    name: Lint
+    runs-on:
+      [ubuntu-latest]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.x
+    - name: Restore Workloads
+      run: dotnet workload restore
+    - name: Lint
+      run: dotnet format
+
   unit-test:
     name: Unit Tests
     runs-on:

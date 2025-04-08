@@ -7,8 +7,8 @@ var str = Console.ReadLine();
 
 if (!int.TryParse(str, out int max))
 {
-	Console.WriteLine("Invalid input");
-	Environment.Exit(-1);
+    Console.WriteLine("Invalid input");
+    Environment.Exit(-1);
 }
 
 
@@ -21,9 +21,9 @@ Console.WriteLine($"Atkin: {atkinTime}");
 
 static TimeSpan TimeTask(Action action)
 {
-	var stopwatch = new Stopwatch();
-	stopwatch.Start();
-	action();
-	stopwatch.Stop();
-	return stopwatch.Elapsed;
+    var stopwatch = new Stopwatch();
+    stopwatch.Start();
+    action();
+    stopwatch.Stop();
+    return stopwatch.Elapsed;
 }
